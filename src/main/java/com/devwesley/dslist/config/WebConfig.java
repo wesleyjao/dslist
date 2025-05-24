@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig {
 
     @Value("${cors.origins}")
-    private String corsOrigins;
+    private String corsOrigins; 
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
