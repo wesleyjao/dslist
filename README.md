@@ -1,7 +1,27 @@
 
 # 🎮 DSList - Catálogo de Jogos
 
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-F2F4F9?style=for-the-badge&logo=spring-boot)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![H2 Database](https://img.shields.io/badge/H2_Database-437299?style=for-the-badge&logo=h2&logoColor=white)
+![Maven](https://img.shields.io/badge/Apache_Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
+![REST API](https://img.shields.io/badge/REST_API-005C9C?style=for-the-badge&logo=rest-api&logoColor=white)
+
 Este é um projeto **Java Spring Boot** que desenvolvi como parte do meu aprendizado em construção de APIs REST, com foco em boas práticas de arquitetura em camadas, uso de DTOs, ORM com JPA e deploy profissional. O sistema consiste em um backend para um catálogo de jogos, onde é possível listar games organizados em listas com ordenação por posição.
+
+---
+
+## 💼 Sobre o projeto
+
+Este projeto foi parte de um estudo prático de backend com Java. Além de solidificar conceitos técnicos, também aprendi:
+
+- Organização de projetos reais
+- Preparação para entrevistas técnicas
+- Boas práticas de escrita de código limpo
+- Como documentar e expor um projeto no GitHub de forma profissional
+
+---
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -34,23 +54,41 @@ Este é um projeto **Java Spring Boot** que desenvolvi como parte do meu aprendi
 
 ### ⚙️ Estrutura do Projeto
 
+![Screenshot 2025-05-27 113648](https://github.com/user-attachments/assets/8f14a993-f38b-4dfb-aec7-b6175a9ffbe7)
+
 ```
-com.devwesley.dslist
-├── config            # Configurações globais (ex: CORS)
-├── controllers       # Endpoints REST
-├── dto               # Objetos de transferência de dados
-├── entities          # Mapeamento ORM das tabelas
-├── projections       # Interfaces para consultas personalizadas
-├── repositories      # Interfaces JPA para acesso ao banco
-├── services          # Regras de negócio e lógica da aplicação
-└── resources         # Arquivos de configuração e scripts
+dslist
+├── config
+│   └── WebConfig.java
+├── controllers
+│   ├── GameController.java
+│   └── GameListController.java
+├── dto
+│   ├── GameDTO.java
+│   ├── GameListDTO.java
+│   ├── GameMinDTO.java
+│   └── ReplacementDTO.java
+├── entities
+│   ├── Belonging.java
+│   ├── BelongingPK.java
+│   ├── Game.java
+│   └── GameList.java
+├── projections
+│   └── GameMinProjection.java
+├── repositories
+│   ├── GameListRepository.java
+│   └── GameRepository.java
+└── services
+    ├── GameListService.java
+    └── GameService.java
 ```
 
-### 🗃️ Modelo de Domínio
+![Screenshot 2025-05-27 112354](https://github.com/user-attachments/assets/8ce39b9b-d27f-4b65-8a21-dc961a1dfec0)
 
 - **Game**: entidade principal com informações detalhadas do jogo
 - **GameList**: listas que agrupam jogos
 - **Belonging**: entidade associativa que representa o relacionamento entre `Game` e `GameList` com posição ordenável
+
 
 ### 🌐 Endpoints (Exemplos)
 
@@ -58,6 +96,7 @@ com.devwesley.dslist
 - `GET /games/{id}` → Retorna os detalhes de um jogo
 - `GET /lists` → Lista todas as listas de jogos
 - `GET /lists/{listId}/games` → Retorna os jogos daquela lista, em ordem
+- `POST /lists/{listId}/replacement`: Reordena um jogo dentro de uma lista (requer um corpo de requisição com `sourceIndex` e `destinationIndex`).
 
 ## 🛠️ Como rodar o projeto
 
@@ -81,26 +120,12 @@ O arquivo `import.sql` faz a inserção inicial no banco de dados para facilitar
 
 ---
 
-## 💼 Sobre o projeto
-
-Este projeto foi parte de um estudo prático de backend com Java. Além de solidificar conceitos técnicos, também aprendi:
-
-- Organização de projetos reais
-- Preparação para entrevistas técnicas
-- Boas práticas de escrita de código limpo
-- Como documentar e expor um projeto no GitHub de forma profissional
-
----
-
-## 📄 Licença
-
-Este projeto está licenciado sob a licença MIT.
-
----
-
 ## 🤝 Conecte-se comigo
 
 Se quiser trocar ideias ou tiver dúvidas:
 
-- 💼 [LinkedIn](https://www.linkedin.com/in/seu-perfil)
-- 📧 seuemail@dominio.com
+Desenvolvido por **[Seu Nome Completo]**
+
+-   GitHub: [Link para o seu perfil GitHub](https://github.com/wesleyjao)
+-   LinkedIn: [Link para o seu perfil LinkedIn](https://linkedin.com/in/wesley-joão-458b51359)
+-   Email: wesleyy.dev2@gmail.com
